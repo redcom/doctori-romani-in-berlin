@@ -11,18 +11,37 @@ const LinkMessages = defineMessages({
     id: 'app.links.fields',
   },
 
-  home: {
-    defaultMessage: 'Home',
-    id: 'app.links.home',
-  },
-
   brandenburg: {
-    defaultMessage: 'Doctori Brandenburg,
+    defaultMessage: 'Doctori Brandenburg',
     id: 'app.links.brandenburg',
   },
   berlin: {
     defaultMessage: 'Doctori Berlin',
     id: 'app.links.berlin',
+  },
+  shopButtons: {
+    defaultMessage: 'Shop Buttons',
+    id: 'app.links.shopButtons',
+  },
+  home: {
+    defaultMessage: 'Home',
+    id: 'app.links.home',
+  },
+  customOrder: {
+    defaultMessage: 'Custom Order',
+    id: 'app.links.customOrder',
+  },
+  cartCheckout: {
+    defaultMessage: 'My Cart',
+    id: 'app.links.cartCheckout',
+  },
+  helpNav: {
+    defaultMessage: 'Help',
+    id: 'app.links.helpNav',
+  },
+  contact: {
+    defaultMessage: 'Contact',
+    id: 'app.links.contact',
   },
   signIn: {
     defaultMessage: 'Sign in',

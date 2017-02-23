@@ -49,6 +49,14 @@ export default [
     "defaultMessage": "You have unsaved changes. Are you sure?",
   },
   {
+    "id": "app.links.berlin",
+    "defaultMessage": "Doctori Berlin",
+  },
+  {
+    "id": "app.links.brandenburg",
+    "defaultMessage": "Doctori Brandenburg",
+  },
+  {
     "id": "app.links.fields",
     "defaultMessage": "Fields",
   },
@@ -59,10 +67,6 @@ export default [
   {
     "id": "app.links.intl",
     "defaultMessage": "Intl",
-  },
-  {
-    "id": "app.links.me",
-    "defaultMessage": "Me",
   },
   {
     "id": "app.links.notFound",
@@ -87,10 +91,6 @@ export default [
   {
     "id": "app.links.todos",
     "defaultMessage": "Todos",
-  },
-  {
-    "id": "app.links.users",
-    "defaultMessage": "Users",
   },
   {
     "id": "auth.email.emailLegend",
@@ -165,8 +165,32 @@ export default [
     "defaultMessage": "The specified user account does not exist.",
   },
   {
-    "id": "footer.madeByHtml",
-    "defaultMessage": "Made with love by",
+    "id": "footer.contactByEmail",
+    "defaultMessage": "Contact us ny email",
+  },
+  {
+    "id": "footer.contactPinterest",
+    "defaultMessage": "Pinterest",
+  },
+  {
+    "id": "footer.copyright",
+    "defaultMessage": "Copyright",
+  },
+  {
+    "id": "footer.helpFAQ",
+    "defaultMessage": "Help & Support",
+  },
+  {
+    "id": "footer.helpPayment",
+    "defaultMessage": "Payment and Pricing",
+  },
+  {
+    "id": "footer.helpReturnPolicy",
+    "defaultMessage": "Return and Exchange Policy",
+  },
+  {
+    "id": "footer.helpShippingAndDelivery",
+    "defaultMessage": "Shipping & Delivery",
   },
   {
     "id": "intl.page.unreadCount",

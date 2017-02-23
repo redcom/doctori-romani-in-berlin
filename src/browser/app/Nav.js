@@ -38,8 +38,8 @@ const Nav = ({ viewer }: NavProps) => (
     borderStyle="solid"
     borderRadius={20}
   >
-    <NavLink to="#/berlin" message={linksMessages.shopButtons} />
-    <NavLink to="#/brandenburg" message={linksMessages.customOrder} />
+    <NavLink to="#berlin" message={linksMessages.berlin} />
+    <NavLink to="#brandenburg" message={linksMessages.brandenburg} />
     <NavLink to="/contact" message={linksMessages.contact} />
     {!viewer && <NavLink to="/signin" message={linksMessages.signIn} />}
   </Box>
