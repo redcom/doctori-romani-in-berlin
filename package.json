@@ -8,7 +8,7 @@
     "install": "gulp native-fix",
     "jest": "jest",
     "jest:watch": "jest --watch",
-    "postinstall": "gulp native && gulp build --production",
+    "postinstall": "gulp build --production",
     "start": "gulp",
     "test": "gulp test"
   },
