@@ -26,6 +26,7 @@ const DefaultSvgIconChecked = (
   </svg>
 );
 
+/* eslint-disable */
 const DefaultSvgIconUnchecked = (
   <svg viewBox="-16 -16 512 512">
     <path
@@ -33,11 +34,12 @@ const DefaultSvgIconUnchecked = (
     />
   </svg>
 );
+/* eslint-enable */
 
 const SvgIcon = ({ color, size, svgIcon, ...props }) => (
   <Text
-    as={svgProps => React.cloneElement(svgIcon, svgProps)}
-    style={theme => ({
+    as={(svgProps) => React.cloneElement(svgIcon, svgProps)}
+    style={(theme) => ({
       fill: theme.colors[color],
       height: theme.typography.fontSize(size),
       width: theme.typography.fontSize(size),
@@ -46,7 +48,7 @@ const SvgIcon = ({ color, size, svgIcon, ...props }) => (
   />
 );
 
-const marginVertical = labelPosition => ({
+const marginVertical = (labelPosition) => ({
   [labelPosition === 'right' ? 'marginRight' : 'marginLeft']: 0.5,
 });
 

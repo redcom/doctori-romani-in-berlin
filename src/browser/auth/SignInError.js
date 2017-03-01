@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { firebaseMessages } from '../../common/lib/redux-firebase';
 import { Message } from '../../common/components';
 
-const getMessage = error =>
+const getMessage = (error) =>
   errorMessages[error.name] || firebaseMessages[error.name] || error.toString();
 
 const SignInError = ({ error }) => {

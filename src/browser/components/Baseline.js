@@ -16,7 +16,7 @@ const styles = {
   container: {
     position: 'relative',
   },
-  baseline: lineHeight => ({
+  baseline: (lineHeight) => ({
     backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px)',
     backgroundSize: `auto ${lineHeight}px`,
     bottom: 0,

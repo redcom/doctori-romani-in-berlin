@@ -50,7 +50,7 @@ const Button = ({
 
   // <Button primary
   // any is needed probably because Array find is not yet fully typed.
-  const propColor: any = colorProps.find(color => props[color]);
+  const propColor: any = colorProps.find((color) => props[color]);
   if (propColor) {
     props = {
       ...props,
@@ -131,7 +131,7 @@ const Button = ({
         <Text
           // Pass backgroundColor to Text for maybeFixFontSmoothing function.
           backgroundColor={props.backgroundColor}
-          style={theme => ({
+          style={(theme) => ({
             ...computedTextStyle,
             ...(textStyle && textStyle(theme, computedTextStyle)),
           })}

@@ -13,9 +13,9 @@ type FormContext = { theme: Theme };
 // Note BrowserForm is defined here and not dynamically passed, otherwise
 // children inputs would lost focus.
 // TODO: Consider PlatformForm, aka Form for the React Native. Do we need it?
-const BrowserForm = props => <form {...props} />;
+const BrowserForm = (props) => <form {...props} />;
 
-const onSubmitWithPreventDefault = onSubmit => event => {
+const onSubmitWithPreventDefault = (onSubmit) => (event) => {
   if (!onSubmit) return;
   event.preventDefault();
   onSubmit(event);

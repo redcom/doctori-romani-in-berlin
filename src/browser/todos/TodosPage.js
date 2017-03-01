@@ -12,7 +12,7 @@ const TodosPage = () => (
   <Box>
     <Title message={linksMessages.todos} />
     <FormattedMessage {...linksMessages.todos}>
-      {message => <PageHeader heading={message} />}
+      {(message) => <PageHeader heading={message} />}
     </FormattedMessage>
     <NewTodo />
     <Todos />

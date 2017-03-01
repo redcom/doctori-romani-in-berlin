@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable */
 import type { CheckboxProps } from './Checkbox';
 import Checkbox from './Checkbox';
 import React from 'react';

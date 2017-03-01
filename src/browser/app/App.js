@@ -19,15 +19,11 @@ import { compose } from 'ramda';
 import { connect } from 'react-redux';
 
 // Pages
-import FieldsPage from '../fields/FieldsPage';
 import HomePage from '../home/HomePage';
-import IntlPage from '../intl/IntlPage';
-import MePage from '../me/MePage';
+import ContactPage from '../contact/ContactPage';
 import NotFoundPage from '../notfound/NotFoundPage';
-import OfflinePage from '../offline/OfflinePage';
+import CopyrightPage from '../copyright/CopyrightPage';
 import SignInPage from '../auth/SignInPage';
-import TodosPage from '../todos/TodosPage';
-import UsersPage from '../users/UsersPage';
 
 type AppProps = {
   currentLocale: string,
@@ -66,6 +62,9 @@ const App = ({
           flex={1} // make footer sticky
         >
           <Match exactly pattern="/" component={HomePage} />
+          <Match exactly pattern="/copyright" component={CopyrightPage} />
+          <Match exactly pattern="/contact" component={ContactPage} />
+          <Match exactly pattern="/signin" component={SignInPage} />
           <Miss component={NotFoundPage} />
         </Box>
         <Footer />

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const extractAttributesFromElement = element =>
+const extractAttributesFromElement = (element) =>
   element.replace(/^<.*?\s/, '').slice(0, -1);
 
 // key1=value1 key2=value2 -> { key1: value1, key2: value2 }
@@ -30,7 +30,7 @@ const faviconProcessingHtmlResultCode = () => {
   return JSON.parse(fs.readFileSync(faviconDataFile)).favicon.html_code;
 };
 
-const isLink = element => /^<link/.test(element);
+const isLink = (element) => /^<link/.test(element);
 
 const injectFavicon = () => {
   const elements = faviconProcessingHtmlResultCode().split('\n');

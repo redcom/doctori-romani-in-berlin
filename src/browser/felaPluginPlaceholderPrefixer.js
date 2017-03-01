@@ -33,7 +33,7 @@ if (isBrowser) {
   const style = document.createElement('style');
   document.head.appendChild(style);
   const sheet = style.sheet;
-  placeholderPrefix = placeholderPrefixes.find(placeholder => {
+  placeholderPrefix = placeholderPrefixes.find((placeholder) => {
     try {
       if (sheet && typeof sheet.insertRule === 'function') {
         sheet.insertRule(`${placeholder}{}`, 0);
@@ -48,7 +48,7 @@ if (isBrowser) {
 
 const placeholderPrefixerBrowser = () => (style: Object) => {
   const computedStyle = customProperty(style, {
-    '::placeholder': value => ({ [placeholderPrefix || '']: value }),
+    '::placeholder': (value) => ({ [placeholderPrefix || '']: value }),
   });
   delete computedStyle['::placeholder'];
   return computedStyle;
@@ -56,7 +56,7 @@ const placeholderPrefixerBrowser = () => (style: Object) => {
 
 const placeholderPrefixerServer = () =>
   (style: Object) => customProperty(style, {
-    '::placeholder': value => placeholderPrefixes.reduce((style, prefix) => {
+    '::placeholder': (value) => placeholderPrefixes.reduce((style, prefix) => {
       style[prefix] = value;
       return style;
     }, {}),

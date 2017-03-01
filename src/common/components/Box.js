@@ -89,7 +89,7 @@ type BoxContext = {
 };
 
 const setBorderTryEnsureRhythmViaPadding = (style, borderWidthProps) => {
-  Object.keys(borderWidthProps).forEach(borderWidthProp => {
+  Object.keys(borderWidthProps).forEach((borderWidthProp) => {
     const borderWidthPropValue = borderWidthProps[borderWidthProp];
     if (typeof borderWidthPropValue !== 'number') return;
     style = { ...style, [borderWidthProp]: borderWidthPropValue };
@@ -201,7 +201,7 @@ const computeBoxStyle = (theme, {
     width,
   };
 
-  Object.keys(maybeRhythmProps).forEach(prop => {
+  Object.keys(maybeRhythmProps).forEach((prop) => {
     const value = maybeRhythmProps[prop];
     if (typeof value === 'number') {
       style = { ...style, [prop]: theme.typography.rhythm(value) };
@@ -229,7 +229,7 @@ const computeBoxStyle = (theme, {
     borderTopColor,
   };
 
-  Object.keys(colorProps).forEach(prop => {
+  Object.keys(colorProps).forEach((prop) => {
     const value = colorProps[prop];
     if (!value) return;
     style = { ...style, [prop]: theme.colors[value] };
@@ -263,7 +263,7 @@ const computeBoxStyle = (theme, {
     zIndex,
   };
 
-  Object.keys(justValueProps).forEach(prop => {
+  Object.keys(justValueProps).forEach((prop) => {
     const value = justValueProps[prop];
     const isDefined = typeof value === 'number' || value;
     if (!isDefined) return;

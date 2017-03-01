@@ -16,7 +16,7 @@ import Settings from './SettingsPage';
 
 const HeaderLink = ({ message, ...props }) => (
   <FormattedMessage {...message}>
-    {message => (
+    {(message) => (
       <Link paddingHorizontal={0.5} {...props}>
         {message}
       </Link>

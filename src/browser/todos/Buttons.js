@@ -17,7 +17,7 @@ type ButtonsProps = {
 const Buttons = ({ addHundredTodos, clearAllTodos, isEmpty }: ButtonsProps) => (
   <Box flexDirection="row" marginHorizontal={-0.25} marginVertical={1}>
     <FormattedMessage {...buttonsMessages.clearAll}>
-      {message => (
+      {(message) => (
         <Button
           primary
           disabled={isEmpty}
@@ -29,7 +29,7 @@ const Buttons = ({ addHundredTodos, clearAllTodos, isEmpty }: ButtonsProps) => (
       )}
     </FormattedMessage>
     <FormattedMessage {...buttonsMessages.add100}>
-      {message => (
+      {(message) => (
         <Button primary marginHorizontal={0.25} onPress={addHundredTodos}>
           {message}
         </Button>

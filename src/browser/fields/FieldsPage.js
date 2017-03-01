@@ -77,7 +77,7 @@ const FieldsPage = ({ fields }) => {
         />
         <Box flexDirection="row" marginTop={1}>
           <FormattedMessage {...buttonsMessages.submit}>
-            {message => <Button primary onPress={onSubmit}>{message}</Button>}
+            {(message) => <Button primary onPress={onSubmit}>{message}</Button>}
           </FormattedMessage>
         </Box>
       </Form>

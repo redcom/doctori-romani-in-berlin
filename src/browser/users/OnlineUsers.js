@@ -3,7 +3,7 @@ import type { State, User } from '../../common/types';
 import React from 'react';
 import getUserPhotoUrl from '../../common/users/getUserPhotoUrl';
 import { Box, Image, Loading, Text } from '../../common/components';
-import { compose } from 'ramda';
+import { compose, isNil } from 'ramda';
 import { connect } from 'react-redux';
 import { firebase } from '../../common/lib/redux-firebase';
 import { onUsersPresence } from '../../common/users/actions';
@@ -27,13 +27,13 @@ type OnlineUsersProps = {|
 |};
 
 const OnlineUsers = ({ users }: OnlineUsersProps) => (
-  users === undefined ?
+  isNil(users) ?
     <Loading />
   : users === null ?
     <Text>No one is online.</Text>
   :
     <Box flexDirection="row" flexWrap="wrap" marginHorizontal={-0.25}>
-      {users.map(user =>
+      {users.map((user) =>
         <OnlineUser key={user.id} user={user} />,
       )}
     </Box>

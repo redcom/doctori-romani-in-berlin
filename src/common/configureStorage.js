@@ -19,7 +19,7 @@ const whitelist = [];
 paths.forEach(([feature, props]) => {
   whitelist.push(feature);
   if (!props) return;
-  const inOut = state => pick(props, state);
+  const inOut = (state) => pick(props, state);
   transforms.push(createTransform(inOut, inOut, { whitelist: [feature] }));
 });
 

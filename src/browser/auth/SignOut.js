@@ -11,7 +11,7 @@ type SignOutContext = { router: any };
 
 const SignOut = ({ signOut }: SignOutProps, { router }: SignOutContext) => (
   <FormattedMessage {...buttonsMessages.signOut}>
-    {message => (
+    {(message) => (
       <Button
         primary
         onPress={() => {

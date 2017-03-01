@@ -15,7 +15,7 @@ const Match = ({
 }) => (
   <ReactRouterMatch
     {...props}
-    render={renderProps => (
+    render={(renderProps) => (
       haveAccess(viewer, authorized) ?
         render ? render(renderProps) : <Component {...renderProps} />
       :

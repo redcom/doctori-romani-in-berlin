@@ -4,8 +4,8 @@ import React from 'react';
 import { ValidationError } from '../../common/lib/validation';
 import { findDOMNode } from 'react-dom';
 
-const focus = errorProp =>
-  WrappedComponent => class Wrapper extends React.Component {
+const focus = (errorProp) =>
+  (WrappedComponent) => class Wrapper extends React.Component {
     componentDidUpdate(prevProps) {
       const error = this.props[errorProp];
       if (error === prevProps[errorProp]) return;

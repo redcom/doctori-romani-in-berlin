@@ -13,21 +13,102 @@
     "jest": true
   },
   "rules": {
+    "arrow-body-style": 0,
+    "arrow-parens": ["error", "always"],
+    "camelcase": 0,
+    "class-methods-use-this": 0,
+    "comma-spacing": 0,
+    "comma-dangle": [2, "always-multiline"],
+    "complexity": [
+      2,
+      12
+    ],
+    "eol-last": 2,
+    "func-names": 0,
+    "guard-for-in": 2,
+    "id-length": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.js"]}],
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "jsx-a11y/label-has-for": 1,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/jsx-boolean-value": 0,
+    "key-spacing": 0,
+    "max-depth": [
+      2,
+      3
+    ],
+    "max-len": [
+      2,
+      100,
+      2,
+      {
+        "ignoreComments": true,
+        "ignorePattern": ^(.*sinon.stub\(.*)|(.*expect\(.*)|(.*spyOn.*)$,
+      }
+    ],
+    "max-nested-callbacks": [
+      2,
+      3
+    ],
+    "max-statements": [
+      2,
+      20,
+    ],
+    "max-params": [
+      2,
+      5
+    ],
+    "new-cap": 0,
+    "newline-per-chained-call": 0,
+    "no-bitwise": 0,
+    "no-confusing-arrow": 0,
+    "no-console": 1,
+    "no-else-return": 0,
+    "no-loop-func": 1,
+    "no-mixed-operators": 0,
+    "no-multi-spaces": 2,
+    "no-param-reassign": 0,
+    "no-sequences": 0,
+    "no-undef": 0,
+    "no-undefined": 2,
+    "no-underscore-dangle": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": 2,
+    "no-use-before-define": 0,
+    "no-useless-escape": 0,
+    "no-var": 2,
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1} ],
+    "padded-blocks": 0,
+    "prefer-const": 2,
+    "radix": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-first-prop-new-line": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/require-render-return": 0,
+    "react/prefer-stateless-function": 0,
+    "react/sort-comp": 0,
+    "spaced-comment": 0,
+    "space-before-function-paren": 0,
+    "strict": 2,
+    "vars-on-top": 0,
     // Soft some rules.
-    "arrow-parens": 0, // Does not work with Flow generic types.
     "global-require": 0, // Used by webpack-isomorphic-tools and React Native.
     "import/first": 0, // Este sorts by atom/sort-lines natural order.
     "import/no-duplicates": 2,
     "import/prefer-default-export": 0, // No. Actions can have just one action.
     "jsx-a11y/anchor-has-content": 0, // Doesn't work with new components.
     "jsx-a11y/html-has-lang": 0, // Can't recognize the Helmet.
-    "no-confusing-arrow": 0, // This rule is super confusing.
     "no-duplicate-imports": 0, // github.com/babel/eslint-plugin-babel/issues/59#issuecomment-230118848
     "no-nested-ternary": 0, // It's nice for JSX.
-    "no-param-reassign": 0, // We love param reassignment. Naming is hard.
     "no-shadow": 0, // Shadowing is a nice language feature. Naming is hard.
     "react/forbid-prop-types": 0, // Este is going to use Flow types.
-    "react/jsx-filename-extension": 0, // No, JSX belongs to .js files
     "react/jsx-indent": 0, // Damn. We need Yarn asap.
     "react/no-unused-prop-types": 0, // Este is going to use Flow types.
     "react/prop-types": 0, // Can't detect flowtype correctly.

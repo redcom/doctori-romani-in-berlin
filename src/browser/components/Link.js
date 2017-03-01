@@ -8,7 +8,7 @@ type LinkProps = TextProps & {
   to: string,
 };
 
-const isExternalLink = to => to.includes('://');
+const isExternalLink = (to) => to.includes('://');
 
 const Anchor = ({ to, ...props }) => (
   <a

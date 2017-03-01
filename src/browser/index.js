@@ -15,7 +15,7 @@ const onWindowIntl = () => {
   const pt = require('react-intl/locale-data/pt');
   const ro = require('react-intl/locale-data/ro');
 
-  [cs, de, en, es, fr, pt, ro].forEach(locale => addLocaleData(locale));
+  [cs, de, en, es, fr, pt, ro].forEach((locale) => addLocaleData(locale));
 
   require('./main');
 };

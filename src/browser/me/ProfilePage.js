@@ -9,7 +9,7 @@ const ProfilePage = () => (
   <Box>
     <Title message={linksMessages.profile} />
     <FormattedMessage {...linksMessages.profile}>
-      {message => <Paragraph>{message}</Paragraph>}
+      {(message) => <Paragraph>{message}</Paragraph>}
     </FormattedMessage>
   </Box>
 );

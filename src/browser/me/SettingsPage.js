@@ -9,7 +9,7 @@ const SettingsPage = () => (
   <Box>
     <Title message={linksMessages.settings} />
     <FormattedMessage {...linksMessages.settings}>
-      {message => <Paragraph>{message}</Paragraph>}
+      {(message) => <Paragraph>{message}</Paragraph>}
     </FormattedMessage>
   </Box>
 );

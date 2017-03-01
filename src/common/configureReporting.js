@@ -29,7 +29,7 @@ const setRavenUserContext = (user) => {
 
 // TODO: Add www.youtube.com/watch?v=5yHFTN-_mOo for total imperative reporting.
 const contextWithoutPrivateData = (state, actions) => ({
-  actions: actions.map(action => action.type),
+  actions: actions.map((action) => action.type),
   device: state.device,
 });
 
@@ -42,7 +42,7 @@ const createReportingMiddleware = () => {
     Raven.setExtraContext(context);
   };
 
-  return store => next => (action: Action) => {
+  return (store) => (next) => (action: Action) => {
     if (action.type === 'APP_ERROR') {
       captureException(action.payload.error);
     } else if (action.type === 'ON_AUTH') {
@@ -54,7 +54,7 @@ const createReportingMiddleware = () => {
 };
 
 // bluebirdjs.com/docs/api/error-management-configuration.html#global-rejection-events
-const register = unhandledRejection => unhandledRejection((event) => {
+const register = (unhandledRejection) => unhandledRejection((event) => {
   event.preventDefault();
   // http://bluebirdjs.com/docs/api/error-management-configuration.html
   captureException(event.detail.reason);

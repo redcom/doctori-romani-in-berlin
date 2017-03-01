@@ -19,21 +19,14 @@ const LinkMessages = defineMessages({
     defaultMessage: 'Doctori Berlin',
     id: 'app.links.berlin',
   },
-  shopButtons: {
-    defaultMessage: 'Shop Buttons',
-    id: 'app.links.shopButtons',
+
+  copyright: {
+    defaultMessage: 'Copyright',
+    id: 'app.links.copyright',
   },
   home: {
     defaultMessage: 'Home',
     id: 'app.links.home',
-  },
-  customOrder: {
-    defaultMessage: 'Custom Order',
-    id: 'app.links.customOrder',
-  },
-  cartCheckout: {
-    defaultMessage: 'My Cart',
-    id: 'app.links.cartCheckout',
   },
   helpNav: {
     defaultMessage: 'Help',
@@ -43,6 +36,10 @@ const LinkMessages = defineMessages({
     defaultMessage: 'Contact',
     id: 'app.links.contact',
   },
+  addDoctor: {
+    defaultMessage: 'Adauga doctor',
+    id: 'app.links.addDoctor',
+  },
   signIn: {
     defaultMessage: 'Sign in',
     id: 'app.links.signIn',
@@ -51,22 +48,6 @@ const LinkMessages = defineMessages({
   notFound: {
     defaultMessage: 'Page Not Found',
     id: 'app.links.notFound',
-  },
-  offline: {
-    defaultMessage: 'Offline',
-    id: 'app.links.offline',
-  },
-  profile: {
-    defaultMessage: 'Profile',
-    id: 'app.links.profile',
-  },
-  settings: {
-    defaultMessage: 'Settings',
-    id: 'app.links.settings',
-  },
-  todos: {
-    defaultMessage: 'Todos',
-    id: 'app.links.todos',
   },
 });
 

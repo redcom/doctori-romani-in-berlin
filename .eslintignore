@@ -3,3 +3,4 @@ build/**
 firebase/**
 ios/**
 node_modules/**
+flow-typed
