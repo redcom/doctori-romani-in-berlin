@@ -42,7 +42,7 @@ const DivButton = (props: {
   <div // eslint-disable-line jsx-a11y/no-static-element-interactions
     {...props}
     role="button"
-    onKeyPress={e => {
+    onKeyPress={(e) => {
       if (props.disabled) return;
       const isSpacebar = e.key === ' ';
       if (!isSpacebar) return;

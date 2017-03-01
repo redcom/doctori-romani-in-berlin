@@ -12,7 +12,7 @@ type SocialProps = { formDisabled: boolean, signIn: typeof signIn };
 const Social = ({ formDisabled, signIn }: SocialProps) => (
   <Box flexDirection="row">
     <FormattedMessage {...buttonsMessages.facebookSignIn}>
-      {message => (
+      {(message) => (
         <Button
           primary
           disabled={formDisabled}

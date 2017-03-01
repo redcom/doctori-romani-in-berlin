@@ -5,9 +5,10 @@
   "scripts": {
     "build": "gulp build",
     "flow": "flow",
+    "install": "gulp native-fix",
     "jest": "jest",
     "jest:watch": "jest --watch",
-    "postinstall": "gulp build --production",
+    "postinstall": "gulp native && gulp build --production",
     "start": "gulp",
     "test": "gulp test"
   },
@@ -66,7 +67,6 @@
     "gravatar": "^1.6.0",
     "gulp": "^3.9.0",
     "gulp-bg": "^0.0.8",
-    "gulp-cli": "^1.2.2",
     "gulp-eslint": "^3.0.1",
     "gulp-if": "^2.0.0",
     "gulp-real-favicon": "^0.2.1",

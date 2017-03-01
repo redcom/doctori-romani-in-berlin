@@ -33,14 +33,14 @@ const saveUserEpic = (
       });
       return Observable.from(promise)
         .map(saveUserDone)
-        .catch(error => Observable.of(appError(error)));
+        .catch((error) => Observable.of(appError(error)));
     });
 
 const usersPresenceEpic = (
   action$: any,
   { firebase, firebaseDatabase }: Deps,
 ) => {
-  const createInfoConnected$ = user => Observable.create(() => {
+  const createInfoConnected$ = (user) => Observable.create(() => {
     let connectionRef;
     const onConnectedValue = (snap) => {
       const online = snap.val();

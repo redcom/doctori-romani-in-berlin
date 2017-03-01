@@ -12,7 +12,7 @@ const initialState = window.__INITIAL_STATE__; // eslint-disable-line no-undersc
 const reportingMiddleware = configureReporting({
   appVersion: initialState.config.appVersion,
   sentryUrl: initialState.config.sentryUrl,
-  unhandledRejection: fn => window.addEventListener('unhandledrejection', fn),
+  unhandledRejection: (fn) => window.addEventListener('unhandledrejection', fn),
 });
 
 const store = configureStore({

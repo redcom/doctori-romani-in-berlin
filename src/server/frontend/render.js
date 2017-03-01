@@ -13,8 +13,8 @@ import { BrowserRoot } from '../../browser/app/Root';
 import { createServerRenderContext, ServerRouter } from 'react-router';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 
-const settleAllWithTimeout = promises => Promise
-  .all(promises.map(p => p.reflect()))
+const settleAllWithTimeout = (promises) => Promise
+  .all(promises.map((p) => p.reflect()))
   // $FlowFixMe
   .each((inspection) => {
     if (inspection.isFulfilled()) return;
@@ -33,14 +33,14 @@ const settleAllWithTimeout = promises => Promise
 // createInitialState loads files, so it must be called once.
 const initialState = createInitialState();
 
-const getHost = req =>
+const getHost = (req) =>
   `${req.headers['x-forwarded-proto'] || req.protocol}://${req.headers.host}`;
 
-const getLocale = req => process.env.IS_SERVERLESS
+const getLocale = (req) => process.env.IS_SERVERLESS
   ? config.defaultLocale
   : req.acceptsLanguages(config.locales) || config.defaultLocale;
 
-const createStore = req => configureStore({
+const createStore = (req) => configureStore({
   initialState: {
     ...initialState,
     device: {
@@ -104,7 +104,7 @@ const renderHtml = (state, body) => {
 };
 
 // react-router.now.sh/ServerRouter
-const render = async (req: Object, res: Object, next: Function) => {
+const render = async (req: Object, res: Object, next: Function) => { //eslint-disable-line max-statements
   try {
     const context = createServerRenderContext();
     const store = createStore(req);

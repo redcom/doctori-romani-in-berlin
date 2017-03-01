@@ -25,7 +25,7 @@ const reducer = (
     }
 
     case 'CLEAR_ALL_COMPLETED_TODOS': {
-      return { ...state, all: filter(todo => !todo.completed, state.all) };
+      return { ...state, all: filter((todo) => !todo.completed, state.all) };
     }
 
     case 'CLEAR_ALL_TODOS': {

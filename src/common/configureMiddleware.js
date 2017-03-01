@@ -5,7 +5,7 @@ import createLoggerMiddleware from 'redux-logger';
 import { createEpicMiddleware } from 'redux-observable';
 
 // Like redux-thunk, but with just one argument.
-const injectMiddleware = deps => ({ dispatch, getState }) => next => action =>
+const injectMiddleware = (deps) => ({ dispatch, getState }) => (next) => (action) =>
   next(typeof action === 'function'
     ? action({ ...deps, dispatch, getState })
     : action,

@@ -10,7 +10,7 @@ const Container = ({ children }: ContainerProps) => (
   <Box
     margin="auto"
     paddingHorizontal={1}
-    style={theme => ({
+    style={(theme) => ({
       maxWidth: theme.container.maxWidths.big,
       minHeight: '100vh', // make footer sticky
     })}

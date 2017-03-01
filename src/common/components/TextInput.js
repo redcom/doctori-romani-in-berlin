@@ -20,7 +20,7 @@ type TextInputContext = {
   theme: Theme,
 };
 
-const computePlaceholderColor = textColor =>
+const computePlaceholderColor = (textColor) =>
   color(textColor).fade(0.5).toString();
 
 const TextInput = (props: TextInputProps, {

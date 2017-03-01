@@ -11,11 +11,11 @@ gulp.task('messages-check', ['messages-extract'], () => {
   const log = (what, messagesKeys) => {
     if (!messagesKeys.length) return;
     console.log(`  ${what}`);
-    messagesKeys.forEach(messageKey => console.log(`    ${messageKey}`));
+    messagesKeys.forEach((messageKey) => console.log(`    ${messageKey}`));
   };
 
   Object.keys(messages)
-    .filter(locale => locale !== '_default')
+    .filter((locale) => locale !== '_default')
     .forEach((locale) => {
       const localeMessagesKeys = Object.keys(messages[locale]);
       const missingMessagesKeys = diff(defaultMessagesKeys, localeMessagesKeys);

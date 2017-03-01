@@ -16,8 +16,8 @@ gulp.task('server-nodemon', (done) => {
   const nodemonPaths = [
     'node_modules/.bin/nodemon.cmd', // Windows uses nodemon.cmd
     'node_modules/.bin/nodemon',
-  ].map(nodemonPath => path.normalize(nodemonPath));
-  const nodemonPath = nodemonPaths.find(path => existsSync(path));
+  ].map((nodemonPath) => path.normalize(nodemonPath));
+  const nodemonPath = nodemonPaths.find((path) => existsSync(path));
   if (nodemonPath == null) {
     throw new Error(`Cannot find nodemon executable; tried: ${nodemonPaths}`);
   }

@@ -38,7 +38,7 @@ const overrideWebkitYellowAutofill = () => ({
 
 const Button = ({ message, ...props }) => (
   <FormattedMessage {...message}>
-    {msg => (
+    {(msg) => (
       <OutlineButton marginHorizontal={0.25} {...props}>
         {msg}
       </OutlineButton>
@@ -46,7 +46,7 @@ const Button = ({ message, ...props }) => (
   </FormattedMessage>
 );
 
-const Buttons = props => (
+const Buttons = (props) => (
   <Box
     flexDirection="row"
     flexWrap="wrap"
@@ -120,6 +120,9 @@ class Email extends React.Component {
           </Heading>
           <TextInput
             {...fields.email}
+            borderBottomWidth={1}
+            borderLeftWidth={1}
+            paddingHorizontal={0.5}
             disabled={disabled}
             marginBottom={1}
             maxLength={100}
@@ -129,6 +132,9 @@ class Email extends React.Component {
           />
           <TextInput
             {...fields.password}
+            borderBottomWidth={1}
+            borderLeftWidth={1}
+            paddingHorizontal={0.5}
             disabled={forgetPasswordIsShown || disabled}
             maxLength={1000}
             placeholder={intl.formatMessage(emailMessages.passwordPlaceholder)}
@@ -158,7 +164,7 @@ class Email extends React.Component {
               </Buttons>
               {recoveryEmailSent &&
                 <FormattedMessage {...emailMessages.recoveryEmailSent}>
-                  {message => (
+                  {(message) => (
                     <Message backgroundColor="success" marginTop={1}>
                       {message}
                     </Message>

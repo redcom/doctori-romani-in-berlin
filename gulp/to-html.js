@@ -16,7 +16,7 @@ gulp.task('to-html', (done) => {
   args.production = true;
   process.env.IS_SERVERLESS = true;
 
-  const fetch = url => new Promise((resolve, reject) => {
+  const fetch = (url) => new Promise((resolve, reject) => {
     http.get({ host: 'localhost', path: url, port: 3000 }, (res) => {
       // Explicitly treat incoming data as utf8 (avoids issues with multi-byte).
       res.setEncoding('utf8');
@@ -40,15 +40,15 @@ gulp.task('to-html', (done) => {
   };
 
   const toHtml = () => {
-    const promises = Object.keys(urls).map(url => fetch(url).then((html) => {
+    const promises = Object.keys(urls).map((url) => fetch(url).then((html) => {
       fs.writeFile(path.join('build', urls[url]), html);
     }));
     return Promise.all(promises);
   };
 
-  runSequence('eslint-ci', 'jest', 'flow', 'clean', 'build', () => {
+  runSequence('clean', 'build', () => {
     const proc = spawn('node', ['./src/server']);
-    proc.stderr.on('data', data => console.log(data.toString()));
+    proc.stderr.on('data', (data) => console.log(data.toString()));
     proc.stdout.on('data', async (data) => {
       data = data.toString();
       if (data.indexOf('Server started') === -1) return;

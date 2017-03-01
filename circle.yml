@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6.9.4
+    version: 7.2.1
 
 dependencies:
   pre:
@@ -11,10 +11,10 @@ dependencies:
     - ~/.cache/yarn
 
 # kb.imakewebsites.ca/2016/02/28/deploying-apps-from-circleci-to-firebase-hosting
-deployment:
-  master:
-    branch: master
-    commands:
-      - yarn global add gulp firebase-tools firebase-bolt
-      - gulp to-html
-      - firebase deploy --token "$FIREBASE_DEPLOY_TOKEN" --non-interactive --project project-808488257248094054
+# deployment:
+#   master:
+#     branch: master
+#     commands:
+#       - yarn global add gulp firebase-tools firebase-bolt
+#       - gulp to-html
+#       - firebase deploy --token "$FIREBASE_DEPLOY_TOKEN" --non-interactive --project project-808488257248094054

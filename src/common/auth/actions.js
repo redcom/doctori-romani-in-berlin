@@ -107,7 +107,7 @@ const signInEpic = (
     const promise = validateEmailAndPassword(validate, { email, password })
       .then(() => firebaseAuth().signInWithEmailAndPassword(email, password));
     return Observable.from(promise)
-      .map(firebaseUser => signInDone(firebaseUser))
+      .map((firebaseUser) => signInDone(firebaseUser))
       .catch((error) => {
         if (messages[error.code]) {
           error = mapFirebaseErrorToEsteValidationError(error.code);
@@ -116,14 +116,14 @@ const signInEpic = (
       });
   };
 
-  const signInWithRedirect = provider =>
+  const signInWithRedirect = (provider) =>
     Observable.from(firebaseAuth().signInWithRedirect(provider))
       .mergeMap(() => Observable.of()) // Don't return anything on redirect.
-      .catch(error => Observable.of(signInFail(error)));
+      .catch((error) => Observable.of(signInFail(error)));
 
-  const signInWithPopup = provider =>
+  const signInWithPopup = (provider) =>
     Observable.from(firebaseAuth().signInWithPopup(provider))
-      .map(userCredential => signInDone(userCredential.user))
+      .map((userCredential) => signInDone(userCredential.user))
       .catch((error) => {
         if (error.code === 'auth/popup-blocked') {
           return signInWithRedirect(provider);
@@ -147,8 +147,8 @@ const signInEpic = (
           .credential(accessToken.toString());
         return Observable.from(firebaseAuth().signInWithCredential(facebookCredential));
       })
-      .map(firebaseUser => signInDone(firebaseUser))
-      .catch(error => Observable.of(signInFail(error)));
+      .map((firebaseUser) => signInDone(firebaseUser))
+      .catch((error) => Observable.of(signInFail(error)));
 
   return action$
     .filter((action: Action) => action.type === 'SIGN_IN')
@@ -180,7 +180,7 @@ const signUpEpic = (action$: any, { firebaseAuth, validate }: Deps) =>
       const promise = validateEmailAndPassword(validate, { email, password })
         .then(() => firebaseAuth().createUserWithEmailAndPassword(email, password));
       return Observable.from(promise)
-        .map(firebaseUser => signUpDone(firebaseUser))
+        .map((firebaseUser) => signUpDone(firebaseUser))
         .catch((error) => {
           if (messages[error.code]) {
             error = mapFirebaseErrorToEsteValidationError(error.code);

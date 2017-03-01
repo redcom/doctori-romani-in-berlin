@@ -44,12 +44,13 @@ const makeConfig = (options) => {
     };
   });
 
+  const HOT_RELOAD_PORT = constants.HOT_RELOAD_PORT;
   const config = {
     cache: isDevelopment,
     devtool: isDevelopment ? devtools : '',
     entry: {
       app: isDevelopment ? [
-        `webpack-hot-middleware/client?path=http://${serverIp}:${constants.HOT_RELOAD_PORT}/__webpack_hmr`,
+        `webpack-hot-middleware/client?path=http://${serverIp}:${HOT_RELOAD_PORT}/__webpack_hmr`,
         path.join(constants.SRC_DIR, 'browser/index.js'),
       ] : [
         path.join(constants.SRC_DIR, 'browser/index.js'),

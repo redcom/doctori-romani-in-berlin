@@ -14,11 +14,11 @@ type SwitchThemeProps = {
   themes: { [themeName: string]: Object },
 };
 
-const getSortedThemeNames = themes => [
+const getSortedThemeNames = (themes) => [
   'defaultTheme',
   ...Object
     .keys(themes)
-    .filter(key => key !== 'defaultTheme')
+    .filter((key) => key !== 'defaultTheme')
     .sort(),
 ];
 
@@ -41,7 +41,7 @@ const SwitchTheme = ({
       justifyContent="flex-start"
       marginHorizontal={-0.25}
     >
-      {getSortedThemeNames(themes).map(themeName => (
+      {getSortedThemeNames(themes).map((themeName) => (
         <Button
           primary
           outline={themeName !== currentTheme}

@@ -21,7 +21,7 @@ const SwitchLocale = (
     marginBottom={1}
     marginHorizontal={-0.25}
   >
-    {locales.map(locale => (
+    {locales.map((locale) => (
       <Button
         outline={locale !== currentLocale}
         key={locale}

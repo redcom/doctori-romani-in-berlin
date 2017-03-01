@@ -35,7 +35,6 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-flow-typed/
 src/common/config.json
 
 # BUCK

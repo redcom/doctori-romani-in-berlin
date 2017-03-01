@@ -19,7 +19,7 @@ export const GlyphLink = ({
   children = null,
 }: TypeGlyphLink) => (
   <FormattedMessage {...message}>
-    {message => (
+    {(message) => (
       <Link
         activeOnlyWhenExact={activeOnlyWhenExact}
         bold

@@ -5,8 +5,8 @@ import { compose, last, map, prop, sortBy, values } from 'ramda';
 
 const initialState = {
   // Undefined is absence of evidence, null is evidence of absence.
-  online: undefined,
-  viewer: undefined,
+  online: null,
+  viewer: null,
 };
 
 const reducer = (
@@ -27,7 +27,7 @@ const reducer = (
       }
       const sortBylastSeenAt = sortBy(prop('lastSeenAt'));
       const online = compose(
-        map(item => item.user),
+        map((item) => item.user),
         sortBy(sortBylastSeenAt),
         values,
         map(compose(last, sortBylastSeenAt, values)),

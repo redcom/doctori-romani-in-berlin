@@ -17,4 +17,4 @@ export default ${messagesString};
 };
 
 export const diff = (a: Array<Object>, b: Array<Object>) =>
-  a.filter(item => b.indexOf(item) === -1);
+  a.filter((item) => b.indexOf(item) === -1);

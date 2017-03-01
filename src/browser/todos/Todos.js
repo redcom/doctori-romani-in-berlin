@@ -58,7 +58,7 @@ const Todos = ({
 
   return (
     <Box>
-      {sortedTodos.map(todo => (
+      {sortedTodos.map((todo) => (
         <TodosItem
           key={todo.id}
           deleteTodo={deleteTodo}

@@ -41,11 +41,11 @@ const IntlPage = () => {
       </Paragraph>
       <Paragraph flexDirection="row">
         <FormattedNumber value={unreadCount}>
-          {message => <Text>{message}</Text>}
+          {(message) => <Text>{message}</Text>}
         </FormattedNumber>
         &nbsp;
         <FormattedMessage {...messages.unreadCount} values={{ unreadCount }}>
-          {message => <Text>{message}</Text>}
+          {(message) => <Text>{message}</Text>}
         </FormattedMessage>
       </Paragraph>
       <Paragraph>

@@ -42,7 +42,7 @@ const xfbml = (WrappedComponent: any) =>
       return (
         <WrappedComponent
           {...this.props}
-          ref={el => this.onWrappedComponentRef(el)}
+          ref={(el) => this.onWrappedComponentRef(el)}
         />
       );
     }

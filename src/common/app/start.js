@@ -53,5 +53,4 @@ const start = (WrappedComponent: Function) => {
   )(Start);
 };
 
-
 export default start;

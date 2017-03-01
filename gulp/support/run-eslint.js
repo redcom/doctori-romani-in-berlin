@@ -5,7 +5,7 @@ import gulpIf from 'gulp-if';
 
 // To fix some eslint issues: gulp eslint --fix
 const runEslint = () => {
-  const isFixed = file => args.fix && file.eslint && file.eslint.fixed;
+  const isFixed = (file) => args.fix && file.eslint && file.eslint.fixed;
   return gulp.src([
     'gulp/**/*.js',
     'gulpfile.babel.js',
