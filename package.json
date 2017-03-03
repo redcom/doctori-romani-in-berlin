@@ -82,6 +82,7 @@
     "ip": "^1.0.2",
     "jest": "^18.1.0",
     "localforage": "^1.4.3",
+    "mailgun-js": "^0.8.2",
     "make-error": "^1.0.4",
     "nconf": "^0.8.1",
     "nodemon": "^1.8.1",

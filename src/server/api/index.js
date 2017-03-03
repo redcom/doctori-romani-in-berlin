@@ -10,8 +10,6 @@ const services = {
 
 const api = (req: $Request, res: $Response) => {
   const { service } = req.params;
-
-  console.log(services[service]);
   !isNil(services[service])
     ? services[service](req, res)
     : res.sendStatus(403);
