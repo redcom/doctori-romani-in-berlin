@@ -21,6 +21,7 @@ type TextareaContext = {
 
 const Textarea = (props: TextareaProps, { theme }: TextareaContext) => {
   const [textStyle] = computeTextStyle(theme, props);
+  textStyle.lineHeight = 1.5;
   const {
     disabled = false,
     height = textStyle.lineHeight / theme.typography.lineHeight,
