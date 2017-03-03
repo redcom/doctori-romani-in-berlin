@@ -17,13 +17,12 @@ nconf.defaults({
   appVersion: process.env.appVersion || process.env.HEROKU_SLUG_COMMIT,
   defaultLocale: 'en',
   firebase: {
-    // To get the config, just click Add web app from the overview page.
-    apiKey: 'AIzaSyDZRAOrDErAaC-TCKbr4cMzaohsPR4sWgU',
-    authDomain: 'este.firebaseapp.com',
-    databaseURL: 'https://este.firebaseio.com',
-    storageBucket: 'project-808488257248094054.appspot.com',
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    storageBucket: '',
   },
-  googleAnalyticsId: 'UA-XXXXXXX-X',
+  googleAnalyticsId: '',
   isProduction: process.env.NODE_ENV === 'production',
   locales: ['cs', 'de', 'en', 'es', 'fr', 'pt', 'ro'],
   port: process.env.PORT || 3000,
@@ -32,7 +31,7 @@ nconf.defaults({
   // How do we access a website running on localhost from mobile browser?
   // stackoverflow.com/questions/3132105
   remoteHotReload: true,
-  sentryUrl: 'https://f297cec9c9654088b8ccf1ea9136c458@app.getsentry.com/77415',
+  sentryUrl: '',
 });
 
 export default nconf.get();
