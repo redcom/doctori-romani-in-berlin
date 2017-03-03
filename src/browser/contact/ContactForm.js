@@ -75,7 +75,7 @@ class ContactForm extends React.Component {
             {...fields.message}
             label="Description"
             maxLength={500}
-            lineHeight={1}
+            rows={5}
             placeholder="Some short description"
           />
         </Box>

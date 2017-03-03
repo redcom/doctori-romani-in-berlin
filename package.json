@@ -37,6 +37,7 @@
     "babel-register": "^6.3.13",
     "babel-runtime": "^6.3.19",
     "bluebird": "^3.0.5",
+    "body-parser": "^1.17.0",
     "color": "^1.0.3",
     "compression": "^1.4.0",
     "copy-webpack-plugin": "^4.0.0",
