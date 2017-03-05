@@ -3,6 +3,7 @@ import type { Action, State } from './types';
 import app from './app/reducer';
 import auth from './auth/reducer';
 import config from './config/reducer';
+import contact from './contact/reducer';
 import device from './device/reducer';
 import intl from './intl/reducer';
 import todos from './todos/reducer';
@@ -27,6 +28,7 @@ const resetStateOnSignOutReducer = (reducer, initialState) => (
     app: state.app,
     config: initialState.config,
     device: initialState.device,
+    contact: initialState.contact,
     intl: initialState.intl,
   }, action);
 };
@@ -36,6 +38,7 @@ const configureReducer = (initialState: Object) => {
     app,
     auth,
     config,
+    contact,
     device,
     fields,
     intl,

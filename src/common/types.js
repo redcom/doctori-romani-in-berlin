@@ -51,6 +51,11 @@ export type AuthState = {
   error: ?Error,
 };
 
+export type ContactState = {
+  formDisabled: boolean,
+  error: ?Error,
+};
+
 export type ConfigState = {
   appName: string,
   appVersion: string,
@@ -87,6 +92,7 @@ export type State = {
   app: AppState,
   auth: AuthState,
   config: ConfigState,
+  contact: ContactState,
   device: DeviceState,
   fields: any,
   intl: IntlState,
@@ -114,6 +120,9 @@ export type Action =
   | { type: 'SAVE_USER_DONE' }
   | { type: 'SET_CURRENT_LOCALE', payload: { locale: string } }
   | { type: 'SET_THEME', payload: { theme: string } }
+  | { type: 'SEND_CONTACT_MSG', payload: { options?: Object } }
+  | { type: 'SEND_CONTACT_MSG_DONE', payload: { response?: Object } }
+  | { type: 'SEND_CONTACT_MSG_FAIL', payload: { error: Error } }
   | { type: 'SIGN_IN', payload: { providerName: string, options?: Object } }
   | { type: 'SIGN_IN_DONE', payload: { user: ?User } }
   | { type: 'SIGN_IN_FAIL', payload: { error: Error } }
