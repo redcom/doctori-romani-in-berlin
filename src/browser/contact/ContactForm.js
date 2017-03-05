@@ -7,6 +7,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { compose } from 'ramda';
 import { connect } from 'react-redux';
 import { fields } from '../../common/lib/redux-fields';
+import { sendContactMessage } from '../../common/contact/actions';
 import { Form, focus } from '../components';
 import {
   Box,
@@ -15,12 +16,8 @@ import {
   FieldTextarea,
 } from '../../common/components';
 
-type ContactFormState = {
-  forgetPasswordIsShown: boolean,
-  recoveryContactFormSent: boolean,
-};
-
 type ContactFormProps = {
+  sendContactMessage: typeof sendContactMessage,
   disabled: boolean,
   fields: any,
   intl: $IntlShape,
@@ -47,12 +44,10 @@ const Buttons = (props) => (
 );
 
 class ContactForm extends React.Component {
-  state: ContactFormState = {
-    forgetPasswordIsShown: false,
-    recoveryContactFormSent: false,
-  };
 
   onFormSubmit = () => {
+    const { fields, sendContactMessage } = this.props;
+    sendContactMessage(fields.$values());
   };
 
   props: ContactFormProps;
@@ -65,11 +60,11 @@ class ContactForm extends React.Component {
         <Box marginTop={1}>
           <Field
             {...fields.email}
-            label="Name"
+            label="Email"
+            disabled={disabled}
             maxLength={100}
-            placeholder="Jane Doe"
+            placeholder="example@email.com"
             // That's how we can show field error.
-            // error="Name is required"
           />
           <FieldTextarea
             {...fields.message}
@@ -96,9 +91,10 @@ class ContactForm extends React.Component {
 export default compose(
   connect(
     (state: State) => ({
-      disabled: state.auth.formDisabled,
-      error: state.auth.error,
+      disabled: state.contact.formDisabled,
+      error: state.contact.error,
     }),
+    { sendContactMessage }
   ),
   injectIntl,
   fields({
