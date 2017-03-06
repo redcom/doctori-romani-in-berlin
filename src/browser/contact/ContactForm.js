@@ -68,6 +68,7 @@ class ContactForm extends React.Component {
           />
           <FieldTextarea
             {...fields.message}
+            disabled={disabled}
             label="Description"
             maxLength={500}
             rows={5}

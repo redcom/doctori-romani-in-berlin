@@ -53,6 +53,7 @@ export type AuthState = {
 
 export type ContactState = {
   formDisabled: boolean,
+  formIsSent: boolean,
   error: ?Error,
 };
 

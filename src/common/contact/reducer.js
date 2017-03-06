@@ -3,6 +3,7 @@ import type { Action, ContactState } from '../types';
 
 const initialState = {
   formDisabled: false,
+  formIsSent: false,
   error: null,
 };
 
@@ -16,7 +17,7 @@ const reducer = (
     }
 
     case 'SEND_CONTACT_MSG_DONE': {
-      return { ...state, formDisabled: false, error: null };
+      return { ...state, formDisabled: false, error: null, formIsSent: true };
     }
 
     case 'SEND_CONTACT_MSG_FAIL': {
