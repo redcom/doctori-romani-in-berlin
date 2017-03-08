@@ -4,5 +4,13 @@
     "authDomain": "...",
     "databaseURL": "...",
     "storageBucket": "..."
-  }
+  },
+  "googleAnalyticsId": "",
+  "sentryUrl": "",
+  "mailgun": {
+    "api_key": "",
+    "domain": "",
+    "to_who": ""
+  },
+  "apiUrl": ""
 }

@@ -32,6 +32,7 @@ nconf.defaults({
   // stackoverflow.com/questions/3132105
   remoteHotReload: true,
   sentryUrl: '',
+  apiUrl: '',
 });
 
 export default nconf.get();
