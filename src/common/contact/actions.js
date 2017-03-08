@@ -40,7 +40,12 @@ const mapFirebaseErrorToEsteValidationError = (code) => {
 };
 
 const sendMessageWithFetcher = (email, message) => {
-  return fetch('/api/contactService', {
+
+  const apiUrl = process.env.IS_BROWSER
+    ? window.__INITIAL_STATE__.config.apiUrl
+    : '/api';
+
+  return fetch(`${apiUrl}/contactService`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',

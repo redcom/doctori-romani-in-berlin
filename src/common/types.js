@@ -62,6 +62,7 @@ export type ConfigState = {
   appVersion: string,
   firebase: ?Object,
   sentryUrl: string,
+  apiUrl: string,
 };
 
 export type DeviceState = {

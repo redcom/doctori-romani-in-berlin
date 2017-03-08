@@ -6,14 +6,13 @@ const isEmail = (mail) => {
 };
 
 const service = async (req, res) => {
-
-  const { from = '', message = '' } = req.body;
-  if (!isEmail(from)) { res.json(403); return; }
+  const { email = '', message = '' } = req.body;
+  if (!isEmail(email)) { res.json(403); return; }
 
   //We pass the api_key and domain to the wrapper, or it won't be able to identify + send emails
   const mailgun = new Mailgun({ apiKey: config.mailgun.api_key, domain: config.mailgun.domain });
   const data = {
-    from,
+    from:email,
     to: config.mailgun.to_who,
     subject: 'Hallo from Doctori Romani in Berlin',
     html: message,
