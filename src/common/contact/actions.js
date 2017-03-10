@@ -60,14 +60,23 @@ const sendMessageWithFetcher = (email, message) => {
 
 const contactEpic = (
   action$: any,
-  { validate }: Deps,
+  { firebase, getUid, validate, now }: Deps,
 ) => {
 
-  const sendMessage = (options) => {
-    const { email, message } = options;
-    const promise = validateEmailAndMessage(validate, { email, message })
-      .then(() => sendMessageWithFetcher(email, message));
-    return Observable.from(promise)
+  const sendMessage = ({ email, message }) => {
+    const promises = [
+      validateEmailAndMessage(validate, { email, message }),
+      sendMessageWithFetcher(email, message),
+      firebase.update({
+        [`contact-messages/${getUid()}`]: {
+          createdAt: now(),
+          email,
+          message,
+        },
+      }),
+    ];
+
+    return Observable.from(promises)
       .map((response) => sendContactMessageDone(response))
       .catch((error) => {
         if (messages[error.code]) {
