@@ -48,6 +48,7 @@ class ContactForm extends React.Component {
   onFormSubmit = () => {
     const { fields, sendContactMessage } = this.props;
     sendContactMessage(fields.$values());
+    fields.$reset();
   };
 
   props: ContactFormProps;
@@ -101,6 +102,10 @@ export default compose(
   fields({
     path: ['contact'],
     fields: ['email', 'message'],
+    getInitialState: () => ({
+      email: '',
+      message: '',
+    }),
   }),
   focus('error'),
 )(ContactForm);
