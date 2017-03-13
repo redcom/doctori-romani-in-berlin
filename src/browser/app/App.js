@@ -21,6 +21,7 @@ import { connect } from 'react-redux';
 // Pages
 import HomePage from '../home/HomePage';
 import ContactPage from '../contact/ContactPage';
+import AddDoctorPage from '../addDoctor/AddDoctorPage';
 import NotFoundPage from '../notfound/NotFoundPage';
 import CopyrightPage from '../copyright/CopyrightPage';
 import SignInPage from '../auth/SignInPage';
@@ -64,6 +65,7 @@ const App = ({
           <Match exactly pattern="/" component={HomePage} />
           <Match exactly pattern="/copyright" component={CopyrightPage} />
           <Match exactly pattern="/contact" component={ContactPage} />
+          <Match exactly pattern="/addDoctor" component={AddDoctorPage} />
           <Match exactly pattern="/signin" component={SignInPage} />
           <Miss component={NotFoundPage} />
         </Box>

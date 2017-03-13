@@ -2,7 +2,7 @@
 import type { State } from '../../common/types';
 import React from 'react';
 import linksMessages from '../../common/app/linksMessages';
-import { Box,Loading, PageHeader } from '../../common/components';
+import { Box, Loading, PageHeader } from '../../common/components';
 import { Title } from '../components';
 import { compose } from 'ramda';
 import { injectIntl } from 'react-intl';

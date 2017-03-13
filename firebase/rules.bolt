@@ -50,10 +50,20 @@ type User {
   photoURL: LongString,
   validate() { this.id == auth.uid }
 }
+
 type ContactMessage {
   createdAt: CurrentTimestamp,
   email: ShortRequiredString,
   message: ExtraLongString,
+}
+
+type Doctor {
+  createdAt: CurrentTimestamp,
+  expertize: ShortRequiredString,
+  validated: Boolean,
+  name: ShortRequiredString,
+  address: LongRequiredString,
+  phones: String,
 }
 
 type UserEmail {
@@ -97,6 +107,12 @@ path /users-presence/{uid} is UserPresence[] {
 }
 
 path /contact-messages/{uuid} is ContactMessage {
+  create() { true }
+  update() { true }
+  read() { true }
+}
+
+path /doctors/{uuid} is Doctor {
   create() { true }
   update() { true }
   read() { true }

@@ -18,6 +18,16 @@ export type Deps = {
 
 // Models
 
+export type Doctor = {|
+  expertize: string,
+  createdAt: number,
+  validated: boolean,
+  id: string,
+  name: string,
+  address: string,
+  phones: Array<string>,
+|};
+
 export type Todo = {|
   completed: boolean,
   createdAt: number,
@@ -44,6 +54,12 @@ export type AppState = {
   menuShown: boolean,
   online: boolean,
   started: boolean,
+};
+
+export type AddDoctorState = {
+  formDisabled: boolean,
+  formSuccess: boolean,
+  error: ?Error,
 };
 
 export type AuthState = {
@@ -92,6 +108,7 @@ export type UsersState = {
 
 export type State = {
   app: AppState,
+  addDoctor: AddDoctorState,
   auth: AuthState,
   config: ConfigState,
   contact: ContactState,
@@ -134,4 +151,7 @@ export type Action =
   | { type: 'SIGN_UP_FAIL', payload: { error: Error } }
   | { type: 'TOGGLE_TODO_COMPLETED', payload: { todo: Todo } }
   | { type: 'TOGGLE_BASELINE' }
+  | { type: 'ADD_DOCTOR', payload: { doctor?: Doctor } }
+  | { type: 'ADD_DOCTOR_FAIL', payload: { error: Error } }
+  | { type: 'ADD_DOCTOR_DONE', payload: { doctor: ?Doctor } }
   ;

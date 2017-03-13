@@ -1,6 +1,7 @@
 // @flow weak
 import type { Action, State } from './types';
 import app from './app/reducer';
+import addDoctor from './addDoctor/reducer';
 import auth from './auth/reducer';
 import config from './config/reducer';
 import contact from './contact/reducer';
@@ -26,6 +27,7 @@ const resetStateOnSignOutReducer = (reducer, initialState) => (
   // Purge sensitive data, preserve only app and safe initial state.
   return reducer({
     app: state.app,
+    addDoctor: state.addDoctor,
     config: initialState.config,
     device: initialState.device,
     contact: initialState.contact,
@@ -37,6 +39,7 @@ const configureReducer = (initialState: Object) => {
   let reducer = combineReducers({
     app,
     auth,
+    addDoctor,
     config,
     contact,
     device,
