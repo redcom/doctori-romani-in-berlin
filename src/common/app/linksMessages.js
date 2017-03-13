@@ -37,7 +37,7 @@ const LinkMessages = defineMessages({
     id: 'app.links.contact',
   },
   addDoctor: {
-    defaultMessage: 'Adauga doctor',
+    defaultMessage: 'Adauga un doctor',
     id: 'app.links.addDoctor',
   },
   signIn: {

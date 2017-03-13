@@ -24,6 +24,12 @@ class Validation {
     return this;
   }
 
+  isArrayOfString(value) {
+    return Array.isArray(value) && (
+      !!(value.filter((v) => { return !!v && (`${v}`).trim().length; })).length
+    );
+  }
+
   isEmptyString(value) {
     return !this.validator.toString(value).trim();
   }
@@ -43,6 +49,13 @@ class Validation {
     return this.validate((value, prop) => {
       if (this.validator.isEmail(value)) return;
       throw new ValidationError('email', { prop });
+    });
+  }
+
+  arrayOfStrings() {
+    return this.validate((value, prop) => {
+      if (this.validator.isArrayOfString(value)) return;
+      throw new ValidationError('phones', { prop });
     });
   }
 
