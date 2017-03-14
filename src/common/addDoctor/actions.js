@@ -28,12 +28,16 @@ const validateForm = (validate, fields) => validate(fields)
     .required()
   .prop('address')
     .required()
+  .prop('expertize')
+    .required()
+  .prop('phones')
+    .required()
   .promise;
 
 const mapFirebaseErrorToEsteValidationError = (code) => {
   const prop = {
-    'auth/invalid-email': 'email',
-    'auth/wrong-password': 'password',
+    'auth/invalid-email': 'name',
+    'auth/wrong-password': 'address',
   }[code];
   return new ValidationError(code, { prop });
 };
@@ -48,24 +52,27 @@ const addDoctorEpic = (
             validated = false,
             name = '',
             address = '',
-            phones = ['aa', 'aaa'],
+            phones = '',
     } = doctor;
-    const promises = [
-      validateForm(validate, doctor),
-      firebase.update({
-        [`doctors/${getUid()}`]: {
-          createdAt: now(),
-          expertize,
-          validated,
-          name,
-          address,
-          phones,
-        },
-      }),
-    ];
+    const uuid = getUid();
+    const promises =
+      validateForm(validate, doctor)
+        .then(
+          firebase.update({
+            [`doctors/${uuid}`]: {
+              createdAt: now(),
+              expertize,
+              validated,
+              name,
+              address,
+              phones,
+              id: uuid,
+            },
+          })
+        );
 
     return Observable.from(promises)
-      .map((response) => addDoctorDone(response))
+      .map((response) => { return addDoctorDone(response); })
       .catch((error) => {
         if (messages[error.code]) {
           error = mapFirebaseErrorToEsteValidationError(error.code);

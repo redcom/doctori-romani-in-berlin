@@ -16,6 +16,7 @@ const PageHeader = ({ heading, description }: PageHeaderProps) => (
     marginBottom={2.5}
     marginTop={3}
     paddingBottom={0.5}
+    borderColor="skyblue"
   >
     <Heading size={2} marginBottom={0}>
       {heading}

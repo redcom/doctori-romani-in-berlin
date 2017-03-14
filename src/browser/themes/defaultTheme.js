@@ -30,6 +30,7 @@ const theme: Theme = {
     black: openColor.gray8,
     white: openColor.white,
     gray: openColor.gray5,
+    skyblue: '#87ceeb',
     open: openColor,
   },
   states: {
@@ -66,6 +67,10 @@ const theme: Theme = {
   },
   paragraph: {
     marginBottom: 1,
+  },
+  input: {
+    borderBottomWidth: 1,
+
   },
 };
 

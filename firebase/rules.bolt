@@ -11,7 +11,7 @@ isViewer(uid) { isSignedIn() && auth.uid == uid }
 
 // github.com/firebase/bolt/blob/master/docs/guide.md#dealing-with-timestamps
 type CurrentTimestamp extends Number {
-  validate() { this > (now - 10000) }
+  validate() { this > 0 }
 }
 
 type ShortString extends String {
@@ -58,12 +58,13 @@ type ContactMessage {
 }
 
 type Doctor {
+  id: ShortRequiredString,
   createdAt: CurrentTimestamp,
   expertize: ShortRequiredString,
   validated: Boolean,
   name: ShortRequiredString,
   address: LongRequiredString,
-  phones: String,
+  phones: ShortString,
 }
 
 type UserEmail {

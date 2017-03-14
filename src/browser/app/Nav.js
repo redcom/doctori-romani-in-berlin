@@ -35,6 +35,7 @@ const Nav = ({ viewer }: NavProps) => (
     borderWidth={1}
     borderStyle="solid"
     borderRadius={20}
+    borderColor="skyblue"
   >
     <NavLink to="/#berlin" message={linksMessages.berlin} />
     <NavLink to="/#brandenburg" message={linksMessages.brandenburg} />

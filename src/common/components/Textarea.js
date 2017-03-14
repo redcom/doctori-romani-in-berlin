@@ -31,6 +31,11 @@ const Textarea = (props: TextareaProps, { theme }: TextareaContext) => {
     ...restProps
   } = props;
 
+  const platformStyle = {
+    outline: 'none',
+    border: `1px dotted ${theme.colors.skyblue}`,
+  };
+
   return (
     <textarea
       height={height}
@@ -38,6 +43,7 @@ const Textarea = (props: TextareaProps, { theme }: TextareaContext) => {
       {...restProps}
       style={{
         ...textStyle,
+        ...platformStyle,
         ...(style && style(theme, textStyle)),
       }}
     />

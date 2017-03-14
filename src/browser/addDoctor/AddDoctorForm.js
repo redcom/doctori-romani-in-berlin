@@ -59,18 +59,38 @@ class AddDoctorForm extends React.Component {
       <Form onSubmit={this.onFormSubmit}>
         <Box marginTop={1}>
           <Field
+            {...fields.expertize}
+            label="Expertiza"
+            disabled={disabled}
+            maxLength={100}
+            placeholder="Domeniu activitate / Expertiza"
+          />
+        </Box>
+        <Box marginTop={1}>
+          <Field
             {...fields.name}
-            label="Name"
+            label="name"
             disabled={disabled}
             maxLength={100}
             placeholder="Nume doctor"
           />
+        </Box>
+        <Box marginTop={1}>
           <Field
             {...fields.address}
             label="Address"
             disabled={disabled}
             maxLength={100}
             placeholder="Adresa doctor"
+          />
+        </Box>
+        <Box marginTop={1}>
+          <Field
+            {...fields.phones}
+            label="Telefoane"
+            disabled={disabled}
+            maxLength={100}
+            placeholder="Telefoane: +4915155155392, 0302234234"
           />
         </Box>
          <Box>
@@ -98,7 +118,7 @@ export default compose(
   injectIntl,
   fields({
     path: ['addDoctor'],
-    fields: ['name', 'address'],
+    fields: ['name', 'address', 'phones', 'expertize'],
     getInitialState: () => ({
     }),
   }),

@@ -22,7 +22,6 @@ export type Doctor = {|
   expertize: string,
   createdAt: number,
   validated: boolean,
-  id: string,
   name: string,
   address: string,
   phones: Array<string>,

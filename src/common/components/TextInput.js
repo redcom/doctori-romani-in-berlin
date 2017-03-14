@@ -52,7 +52,9 @@ const TextInput = (props: TextInputProps, {
     '::placeholder': {
       color: placeholderTextColor,
     },
+    'border-bottom': `1px dotted ${theme.colors.skyblue}`,
   };
+
   return (
     <Text
       as={PlatformTextInput}
